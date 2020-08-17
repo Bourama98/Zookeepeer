@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en"
+      
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui"
+      >
+    <h:head>
+        <title>Zoo Keeper Login</title>
+         <meta charset="utf-8"/>
+           <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+<meta http-equiv="Pragma" content="no-cache" />
+<meta http-equiv="Expires" content="-1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css"></link> 
+  <link type="text/css" rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"/>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    </h:head>
+    <h:body class="w3-light-blue">
+        <div class="w3-card-4" style="margin-top: 10em; margin-left: auto; margin-right: auto; background: lightblue; width: 20em; height: 30em; border-radius: 3em; padding: .5em">
+            <h1 align="center" style="font-size: 2em; font-family: cursive; margin-bottom: 0.5em">Authenticate Zoo Keeper</h1>
+            <h:messages style="color: red" />
+            
+            <h:form style="margin-top: 0.5em; margin-left: 2.5em; margin-right: auto; padding: 2em">
+                <div class="form-row" style="margin-left: auto; margin-right: auto; margin-top: .5em ">
+                    <h:outputText id="uName" value="UserName" style="font-size: 1em; margin-bottom: .3em"/>
+                    <h:inputText id="name" value="#{user.name}" required="true" requiredMessage="Name is required" class="form-control" style="width: 10em; height: 2em; border-radius: .5em"/>
+                    <!--<h:message style="color: red" for="name" errorClass="errors"/>-->
+                </div>
+                <div class="form-row" style="margin-left: auto; margin-right: auto; margin-top: .5em">
+                    <h:outputLabel id="pWord" value="Password" style=" font-size: 1em; margin-right: .5rem;"/>
+                    <h:inputSecret id="password"  value="#{user.password}" required="true" requiredMessage="Password is required" class="form-control" style=" height: 2em; width: 10em; border-radius: .5em" />
+                    <!--<h:message style="color: red" for="password" errorClass="errors"/>-->
+                </div>
+                <h:commandButton class="btn btn-secondary"  id="login" type="" value="Login" action="#{user.login()}" style="width: 60%; height: 2em; text-align: center; font-size: 1em; border-radius: 1em; margin-top:2em; margin-left:1.2em; margin-right: auto" />
+
+            </h:form>
+        </div>
+ 
+     
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+       
+    </h:body>
+</html>

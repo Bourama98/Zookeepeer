@@ -1,0 +1,45 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!--
+ /*
+ * CS-499
+ * 5-2 Milestone Four: Enhancement Three: Databases
+ * Bourama Mangara
+ * 02 August 2020
+ */
+-->
+<faces-config version="2.2"
+              xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+              xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+              xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-facesconfig_2_2.xsd">
+    <managed-bean>
+        <managed-bean-name>user</managed-bean-name>
+        <managed-bean-class>WebStuff.UserManagedBean</managed-bean-class>
+        <managed-bean-scope>session</managed-bean-scope>
+    </managed-bean>
+    <navigation-rule>
+        <from-view-id>/login.xhtml</from-view-id>
+        <navigation-case>
+            <from-outcome>attempt</from-outcome>
+            <to-view-id>/login.xhtml</to-view-id>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>loginFail</from-outcome>
+            <to-view-id>/loginFail.xhtml</to-view-id>
+           
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>zookeeper</from-outcome>
+            <to-view-id>/zookeeper.xhtml</to-view-id>
+        </navigation-case>
+    </navigation-rule>
+    <navigation-rule>      
+        <navigation-case>
+            <from-outcome>sessionExpired</from-outcome>
+            <to-view-id>/login.xhtml</to-view-id>
+        </navigation-case>
+    </navigation-rule>
+
+    <lifecycle>
+        <phase-listener id="nocache">WebStuff.CacheControlPhaseListener</phase-listener>
+    </lifecycle>
+</faces-config>
